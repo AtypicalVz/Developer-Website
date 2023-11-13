@@ -4,11 +4,14 @@
     --primary: #FFC107;
     --secundary: #0097A7;
     --gray: #757575;
+    --lgray: #DFE9F3;
 }
 
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    background-image: linear-gradient(to top, var(--lgray)0%,
+    var(--white)100%);
 }
 *, *:before, *:after{
     box-sizing: inherit;
@@ -16,6 +19,14 @@ html{
 body{
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+}
+.sombra{
+    box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.5);
+    -webkit-box-shadow: 0px 0px 15px 0px (112,112,112,0.5);
+    -moz-box-shadow: 0px 0px 15px 0px (112,112,112,0.5);
+    background-color: var(--white);
+    padding: 2rem; /*Espacio interior */
+    border-radius: 1rem; /*Redondear esquinas*/
 }
 /*tipografía*/
 h1{
@@ -70,6 +81,7 @@ h1, h2, h3{
     background-size: cover; /* Para que la imagen se ajuste al tamaño del contenedor */
     height: 450px;
     position: relative; /* El padre debe ser relative*/
+    margin-bottom: 2rem; /* Margen inferior para separar*/
 }
 .contenedor-hero{
     position: absolute; /* El hijo debe ser absolute*/
@@ -113,4 +125,40 @@ h1, h2, h3{
     .boton{
         width: auto;
     }
+}
+
+/*Servicios*/
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem; /*Distancia entre columnas*/
+    
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.servicio h3{
+    color: var(--secundary);
+    font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2;/*Interlineado*/
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
 }
